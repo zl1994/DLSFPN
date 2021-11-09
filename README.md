@@ -1,14 +1,13 @@
-# pytorch-retinanet
+This repository provides the codes for Dynamic object detection algorithm based on lightweight shared feature pyramid
 
-![img3](https://github.com/yhenon/pytorch-retinanet/blob/master/images/3.jpg)
-![img5](https://github.com/yhenon/pytorch-retinanet/blob/master/images/5.jpg)
+This project is based on [pytorch-retinanet](https://github.com/yhenon/pytorch-retinanet)
+
+## pytorch-retinanet
 
 Pytorch  implementation of RetinaNet object detection as described in [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002) by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He and Piotr Dollár.
 
 This implementation is primarily designed to be easy to read and simple to modify.
 
-## Results
-Currently, this repo achieves 33.5% mAP at 600px resolution with a Resnet-50 backbone. The published result is 34.0% mAP. The difference is likely due to the use of Adam optimizer instead of SGD with weight decay.
 
 ## Installation
 
@@ -56,29 +55,6 @@ The state dict model can be loaded using:
 ```
 retinanet = model.resnet50(num_classes=dataset_train.num_classes(),)
 retinanet.load_state_dict(torch.load(PATH_TO_WEIGHTS))
-```
-
-## Validation
-
-Run `coco_validation.py` to validate the code on the COCO dataset. With the above model, run:
-
-`python coco_validation.py --coco_path ~/path/to/coco --model_path /path/to/model/coco_resnet_50_map_0_335_state_dict.pt`
-
-This produces the following results:
-
-```
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.335
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.499
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.357
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.167
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.369
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.466
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.282
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.429
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.458
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.255
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.508
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.597
 ```
 
 ## Visualization
@@ -154,11 +130,3 @@ bird,2
 - Significant amounts of code are borrowed from the [keras retinanet implementation](https://github.com/fizyr/keras-retinanet)
 - The NMS module used is from the [pytorch faster-rcnn implementation](https://github.com/ruotianluo/pytorch-faster-rcnn)
 
-## Examples
-
-![img1](https://github.com/yhenon/pytorch-retinanet/blob/master/images/1.jpg)
-![img2](https://github.com/yhenon/pytorch-retinanet/blob/master/images/2.jpg)
-![img4](https://github.com/yhenon/pytorch-retinanet/blob/master/images/4.jpg)
-![img6](https://github.com/yhenon/pytorch-retinanet/blob/master/images/6.jpg)
-![img7](https://github.com/yhenon/pytorch-retinanet/blob/master/images/7.jpg)
-![img8](https://github.com/yhenon/pytorch-retinanet/blob/master/images/8.jpg)
