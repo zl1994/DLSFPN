@@ -1,4 +1,4 @@
-This repository provides the codes for Dynamic object detection algorithm based on lightweight shared feature pyramid
+This repository provides the codes for Dynamic object detection algorithm based on lightweight shared feature pyramid.
 
 This project is based on [pytorch-retinanet](https://github.com/yhenon/pytorch-retinanet)
 
